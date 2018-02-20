@@ -1,0 +1,120 @@
+<div class="col-md-4"></div>
+<div class="col-md-4 shadow" style="background-color:whitesmoke;border-radius:10px;padding-bottom:20px;margin-left:10px;margin-right:10px;">
+  <h3 align="center" style="padding-bottom:20px;">Create Your Account</h3>
+  <form class="form-horizontal" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <!--  -->
+    <!-- First Name -->
+    <div class="form-group ">
+      <label class="control-label col-sm-3" for="firstname">First name</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" required placeholder="Enter First Name" id="firstName" name="firstName" #firstName=ngModel
+          [(ngModel)]="users.firstName">
+      </div>
+      <div class="col-sm-offset-4 col-sm-8" style="height:15px;min-height:15px;">
+      </div>
+    </div>
+
+    <!-- Last Name -->
+    <div class="form-group ">
+      <label class="control-label col-sm-3" for="lastname">Last name</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" required placeholder="Enter Last Name" id="lastName" name="lastName" #lastName=ngModel
+          [(ngModel)]="users.lastName">
+      </div>
+      <div class="col-sm-offset-4 col-sm-8" style="height:15px;min-height:15px;">
+      </div>
+    </div>
+
+
+    <!-- Username -->
+    <div class="form-group ">
+      <label class="control-label col-sm-3" for="username">Username</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" required placeholder="Enter username" id="userName" name="userName" #userName=ngModel
+          [(ngModel)]="users.userName">
+      </div>
+      <div class="col-sm-offset-4 col-sm-8" style="height:15px;min-height:15px;">
+        <div *ngIf="userName.errors && (userName.dirty || f.submitted)" style="font-size:12px;color:red;">
+          <div *ngIf="userName.errors.required">
+            Username required
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- E-mail -->
+    <div class="form-group ">
+      <label class="control-label col-sm-3" for="email">E-mail</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" required placeholder="Enter E-mail" id="email" name="email" #email=ngModel [(ngModel)]="users.email">
+      </div>
+      <div class="col-sm-offset-4 col-sm-8" style="height:15px;min-height:15px;">
+      </div>
+    </div>
+
+
+
+    <!-- Password -->
+    <div class="form-group">
+      <label class="control-label col-sm-3" for="pwd">Password</label>
+      <div class="col-sm-9">
+        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" [(ngModel)]="users.password"
+          required #password=ngModel minlength="4">
+      </div>
+      <div class="col-sm-offset-4 col-sm-8" style="height:15px;min-height:15px;">
+        <div *ngIf="password.errors && (password.dirty || f.submitted)" style="font-size:12px;color:red;">
+          <div *ngIf="password.errors.required">
+            Password required
+          </div>
+          <div *ngIf="password.errors.minlength">
+            Password require 4 minimum charactors
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Password Confirmation -->
+    <div class="form-group">
+      <label class="control-label col-sm-3" for="cnpwd">Confirm Password</label>
+      <div class="col-sm-9">
+        <input type="password" class="form-control" id="cpassword" placeholder="Reenter password" name="cpassword" [(ngModel)]="users.password"
+          required #cpassword=ngModel>
+      </div>
+      <div class="col-sm-offset-4 col-sm-8" style="height:15px;min-height:15px;">
+        <div *ngIf="cpassword.errors && (cpassword.dirty || f.submitted)" style="font-size:12px;color:red;">
+          <div *ngIf="cpassword.errors.required">
+            Confirm Password required
+          </div>
+          <div *ngIf="cpassword.errors.minlength">
+            Password require 4 minimum charactors
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--     <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-9">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="agree" [(ngModel)]="users.agree" required #agree=ngModel> Agree with Terms</label>
+        </div>
+      </div>
+      <div class="col-sm-offset-4 col-sm-8" style="height:15px;min-height:15px;">
+        <div *ngIf="agree.errors && (agree.dirty || f.submitted)" style="font-size:12px;color:red;">
+          <div *ngIf="agree.errors.required">
+            Please select agree
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-9" style="margin-top:5px;">
+        <button type="submit" class="btn btn-info" >Register</button>
+        <button type="reset" class="btn btn-warning">Reset</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+<div class="col-md-4"></div>

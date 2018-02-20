@@ -1,0 +1,37 @@
+  
+   <div class="col-lg-8">
+    <table class="table table-fixed">
+      <tbody id="scroll" style="background-color: #aab8b30a">
+        <tr>
+          <td  *ngFor="let message of messages | async" >
+            <div class="container col-lg-7"  [ngClass]="{ '': message.sentBy === 'bot',
+            'right':   message.sentBy === 'user' }">
+            <div *ngIf="message.sentBy == 'bot'">
+             <img src="https://cdn-images-1.medium.com/max/1600/1*2YwE2J-Tv6J9PI4BCikzKQ.png"  style="width:100%;">
+             <p>E-agro bot</p><br>
+              <p> {{ message.content }}</p>
+            </div>
+            <div *ngIf="message.sentBy == 'user'">
+              <img src="https://www.gstatic.com/history/static/myactivity_20171212-0122_1/images/promo.png"  style="width:100%;">
+              <p>You</p><br>
+               <p> {{ message.content }}</p>
+             </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   </div>
+  
+
+  
+
+<div class="col-lg-12">
+  <div class="col-lg-10">
+      
+          <div class="form-group">
+              <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" placeholder="enter message here" class="col-lg-9 inline" autocomplete="off" >
+              <button id="btnsend"  (click)="sendMessage()" class="col-lg-2 btn btn-lg btn-info" style="float: right">Send</button>
+          </div>
+   </div>
+ </div>
