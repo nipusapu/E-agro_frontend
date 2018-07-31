@@ -31,7 +31,7 @@
       
           <div class="form-group">
               <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" placeholder="enter message here" class="col-lg-9 inline" autocomplete="off" >
-              <button id="btnsend"  (click)="sendMessage()" class="col-lg-2 btn btn-lg btn-info" style="float: right">Send</button>
+              <button id="btnsend"  [disabled]="!formValue" (click)="sendMessage()" class="col-lg-2 btn btn-lg btn-info" style="float: right">Send</button>
           </div>
    </div>
  </div>

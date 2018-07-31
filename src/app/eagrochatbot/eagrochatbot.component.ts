@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
 import { ChatbotService,Message } from '../service/chatbot.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/scan';
@@ -15,7 +15,7 @@ export class EagrochatbotComponent implements OnInit {
 
 
   constructor(public Chat:ChatbotService) { }
-
+  @HostListener('window:beforeunload')
   ngOnInit() {
     this.messages = this.Chat.conversation.asObservable()
         .scan((acc, val) => acc.concat(val) );
