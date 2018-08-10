@@ -41,7 +41,6 @@ export class ItemaddcartComponent implements OnInit {
  {
     this.cartForm = new FormGroup(
       {
-        quantity : new FormControl('quantity',[Validators.required,Validators.pattern('^[1-9]+[0-9]*$')]),
         itemPrice : new FormControl({value: this.itemPrice, disabled: true},null),
         total : new FormControl(),
         itemId : new FormControl({value: this.itemId},null),
