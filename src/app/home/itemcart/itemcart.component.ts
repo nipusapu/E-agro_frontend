@@ -25,8 +25,7 @@ export class ItemcartComponent implements OnInit {
    c.itemId=storedNames[index].itemId;
    c.imagePath=storedNames[index].imagePath; 
    c.name=storedNames[index].name;
-   c.price=storedNames[index].price; 
-   c.quantity=storedNames[index].quantity;   
+   c.price=storedNames[index].price;  
    c.total=storedNames[index].total;
    this.CI.push(c); 
   }
