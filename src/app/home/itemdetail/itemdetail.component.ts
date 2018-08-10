@@ -12,7 +12,7 @@ import {ItemService} from '../item.service';
 export class ItemdetailComponent implements OnInit {
 
   public selectedItem : Item;
-  private selectedItemImages: { id: number, imageUrl: string }[];
+  public selectedItemImages: { id: number, imageUrl: string }[];
   constructor(private itemservice : ItemService,private activatedroute: ActivatedRoute,private router : Router) 
   {
     
